@@ -11,23 +11,7 @@
 
 ## 🧭 How it works
 
-```
-              user prompt
-                   │
-            ┌──────▼──────┐
-            │  Classifier │  (Bedrock prompt node)
-            └──┬───┬───┬──┘
-     bug report│   │FAQ│  other / unsafe
-               ▼   ▼   ▼
-   ┌──────────────┐ ┌───────────┐ ┌──────────────────┐
-   │ Bug Report   │ │ FAQ answer│ │ Support redirect │
-   │ Agent + tool │ │ (shop FAQ)│ │ → human hotline  │
-   └──────┬───────┘ └───────────┘ └──────────────────┘
-          ▼
-  Lambda `create_bug_report`
-          ▼
-  DynamoDB (ticketId)
-```
+<p align="center"><img src="docs/architecture.svg" alt="Architecture diagram" width="100%"/></p>
 
 | Route | What happens |
 |---|---|
